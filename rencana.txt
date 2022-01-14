@@ -1,0 +1,3 @@
+- belajar statistika deskriptif
+- belajar probabilitas
+- belajar statistika inferensial
