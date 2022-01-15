@@ -9,7 +9,7 @@ class Hero :
         self.__health = health
         self.__attack = attack
         self.__armor = armor 
-        
+        Hero.__jumlah += 1
   
 
 class Warrior(Hero) : # inherintance
