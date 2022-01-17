@@ -10,11 +10,16 @@ class Hero :
         self.__health = health
         self.__attack = attack
         self.__armor = armor 
-        self.info = "name : {}  \n\t health : {}".format(self.__name,self.__health)
+        #self.info = "name : {}  \n\t health : {}".format(self.__name,self.__health) ... kalo gini bisa dirubah user
+        #self.__info = "name : {}  \n\t health : {}".format(self.__name,self.__health) ... kalo gini bisa kita akses
+        #solusinya liat property
         Hero.__jumlah += 1
 
-    
-        
+    @property #mengubah method menjadi seperti variable
+    def info(self):
+        return "name : {}  \n\t health : {}".format(self.__name, self.__health)
+
+   
     #method static (decorator)
     @staticmethod # tidak mengambil argumen
     def getJumlah() : 
@@ -26,17 +31,16 @@ class Hero :
 
 
 # inherintance
-class Warrior(Hero) : 
+class Hero_Intelligent(Hero) : 
     pass
 
-class Mage(Hero) :
+class Hero_Strength(Hero) :
     pass
 
-eudora = Hero("eudora", 100, 7, 3)
-zilong = Warrior("zilong", 100, 8.5 , 7)
-miya = Mage("miya",100, 6.8, 6)
+snipper = Hero_Intelligent("snippper", 100, 6, 6)
+earthshaker = Hero_Strength("earthshaker", 100, 8.5, 5)
 
-#print(miya.__name) # ini akan error, karena atributnya private
-print(zilong.info)
-#test jumlah
-print(Hero.getJumlah())
+print(earthshaker.info)
+
+
+
